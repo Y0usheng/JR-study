@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        /* --- 全局样式重置 --- */
+        * {
+            box-sizing: border-box;
+            /* 确保内边距不会撑大元素的宽度 */
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f8;
+            /* 网页背景色 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* --- 表单容器样式 --- */
+        .form-container {
+            background-color: #f0f4f8;
+            /* 参考图片中的浅蓝灰色背景 */
+            width: 100%;
+            max-width: 500px;
+            /* 限制最大宽度，保证美观 */
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            /* 轻微的阴影 */
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+
+        /* --- 分区标题样式 (带绿色圆点) --- */
+        .section-title {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background-color: #00897b;
+            /* 图片中的深绿色圆点 */
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        /* --- 输入框组样式 --- */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-size: 14px;
+        }
+
+        /* --- 输入框通用样式 --- */
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            background-color: #e8ecef;
+            /* 图片中的输入框背景色 */
+            border-radius: 4px;
+            font-size: 14px;
+            color: #333;
+            transition: border-color 0.3s;
+        }
+
+        /* 输入框聚焦时的效果 */
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #00897b;
+            background-color: #fff;
+        }
+
+        textarea {
+            resize: vertical;
+            /* 允许垂直拉伸 */
+            min-height: 80px;
+        }
+
+        /* --- 单选按钮样式 --- */
+        .radio-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 5px;
+        }
+
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        .radio-group input {
+            margin-right: 5px;
+        }
+
+        /* --- 提交按钮样式 --- */
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: #4CAF50;
+            /* 鲜艳的绿色 */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+            /* 动画过渡 */
+        }
+
+        /* 按钮 Hover 效果 */
+        .submit-btn:hover {
+            background-color: #45a049;
+            /* 鼠标悬停变深 */
+        }
+
+        /* 条款复选框样式 */
+        .terms {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .terms input {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h1>Sign Up</h1>
+
+        <form action="#" method="POST">
+
+            <div class="section-title">Your basic info</div>
+
+            <div class="form-group">
+                <label for="firstname">First Name:</label>
+                <input type="text" id="firstname" name="firstname" required placeholder="Enter your first name">
+            </div>
+
+            <div class="form-group">
+                <label for="lastname">Last Name:</label>
+                <input type="text" id="lastname" name="lastname" required placeholder="Enter your last name">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="example@email.com">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" minlength="8" required
+                    placeholder="At least 8 characters">
+            </div>
+
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required
+                    placeholder="Retype password">
+            </div>
+
+            <div class="section-title">Other details</div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+
+            <div class="form-group">
+                <label>Gender:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="gender" value="male" required> Male</label>
+                    <label><input type="radio" name="gender" value="female"> Female</label>
+                    <label><input type="radio" name="gender" value="other"> Other</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="profession">Choose Your Profession:</label>
+                <select id="profession" name="profession">
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="web-dev">Web Development</option>
+                    <option value="data-analytics">Data Analytics</option>
+                    <option value="ui-ux">UI/UX Design</option>
+                    <option value="student">Student</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="about">About Me:</label>
+                <textarea id="about" name="about" placeholder="Tell us a bit about yourself..."></textarea>
+            </div>
+
+            <div class="terms">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms" style="display:inline; margin:0;">I'm accepting Terms and Conditions</label>
+            </div>
+
+            <button type="submit" class="submit-btn">Sign Up</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
