@@ -57,7 +57,7 @@ jobs:
   # --- 任务 2: 部署到 GitHub Pages ---
   deploy:
     environment:
-      name: github-pages
+      name: income-tax-calculator
       url: ${{ steps.deployment.outputs.page_url }}
     needs: check-and-test # 必须等测试任务通过后才执行
     runs-on: ubuntu-latest
