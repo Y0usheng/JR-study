@@ -50,7 +50,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./cal/income-tax-cal/dist
+          path: ./Tax-Cal/income-tax-cal/dist
 
   # --- 任务 2: 部署到 GitHub Pages ---
   deploy:
