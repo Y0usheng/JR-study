@@ -1,0 +1,211 @@
+/* src/App.css */
+.app-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* 头部样式 */
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.header p {
+  color: var(--text-gray);
+}
+
+/* 通用卡片样式 */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+}
+
+.card h2 {
+  font-size: 20px;
+  margin-bottom: 24px;
+}
+
+/* 年份选择器 */
+.year-selector-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.year-btn {
+  padding: 10px 20px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: #f3f4f6;
+  color: var(--text-dark);
+  transition: all 0.2s;
+}
+
+.year-btn:hover {
+  background-color: #e5e7eb;
+}
+
+.year-btn.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* 布局网格 */
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+/* 表格样式 */
+.tax-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tax-table th {
+  text-align: left;
+  color: var(--text-gray);
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tax-table td {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 14px;
+}
+
+/* 输入框区域 */
+.input-group {
+  margin-bottom: 24px;
+}
+
+.input-label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.currency-symbol {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-gray);
+}
+
+.income-input {
+  width: 100%;
+  padding: 12px 12px 12px 30px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.income-input:focus {
+  outline: 2px solid var(--primary-color);
+  border-color: transparent;
+}
+
+/* 按钮 */
+.calculate-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.calculate-btn:hover {
+  background-color: var(--primary-hover);
+}
+
+/* 结果展示 */
+.result-area {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.total-row {
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 18px;
+  margin-top: 12px;
+}
+
+/* src/App.css 追加内容 */
+.result-box {
+  background-color: #eff6ff;
+  /* 浅蓝色背景 */
+  border: 1px solid #dbeafe;
+  /* 浅蓝色边框 */
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 24px;
+}
+
+.result-box h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text-dark);
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 15px;
+  color: #4b5563;
+  /* 深灰色文字 */
+}
+
+/* 强调色（Income Tax 那一行的蓝色） */
+.text-highlight {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* 分割线 */
+.result-divider {
+  height: 1px;
+  background-color: #d1d5db;
+  /* 灰色线条 */
+  margin: 16px 0;
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+}
